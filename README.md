@@ -1,38 +1,66 @@
-# Milë Tricot Landing Page
+# Mile & Tricot
 
-Aplicação web exportável e versionável para a landing page da **Milë Tricot**, construída com HTML, CSS e JavaScript modular sem dependências externas.
+Vitrine premium para captação de encomendas personalizadas de maxi tricô artesanal.
 
-## Estrutura
+## Tecnologias utilizadas
 
-```text
-package.json
-index.html
-src/main.jsx
-src/App.jsx
-src/components/
-src/content/
-src/assets/
-src/styles/
-README.md
+- HTML, CSS e JavaScript modular.
+- Componentes em arquivos `.jsx` renderizados no navegador.
+- Conteúdo centralizado em arquivo `.ts` usado como módulo JavaScript.
+- Scripts Node.js nativos para servidor local e geração de build estático.
+- Sem dependências externas de runtime ou build.
+
+## Instalação
+
+Instale as dependências do projeto com:
+
+```bash
+npm install
 ```
 
-## Conteúdo e CTAs
+> Atualmente o projeto não declara pacotes externos em `package.json`, mas o comando mantém o fluxo padrão de instalação e prepara o `package-lock.json` quando necessário.
 
-Os links e textos centrais da marca ficam em `src/content/brand.ts`, incluindo WhatsApp, Instagram, dados de contato, navegação, produtos, materiais e itens da galeria. Para trocar os CTAs, altere:
+## Rodar localmente
 
-- `brand.whatsapp.number`
-- `brand.whatsapp.message`
-- `brand.instagram.url`
-- `brand.instagram.handle`
-
-## Scripts
+Inicie o servidor local de desenvolvimento com:
 
 ```bash
 npm run dev
+```
+
+Por padrão, o site fica disponível em `http://localhost:4173`.
+
+## Build de produção
+
+Gere a versão estática de produção com:
+
+```bash
 npm run build
+```
+
+O build é exportado para a pasta `dist/`, pronta para hospedagem em serviços como Vercel, Netlify, Cloudflare Pages ou servidores estáticos.
+
+Para visualizar o build localmente, use:
+
+```bash
 npm run preview
 ```
 
-## Exportação
+## Configuração de conteúdo e marca
 
-O comando `npm run build` gera a versão estática em `dist/`, pronta para hospedagem em serviços como Vercel, Netlify, Cloudflare Pages ou servidor estático próprio.
+As principais informações editáveis ficam em `src/content/brand.ts`:
+
+- WhatsApp: número, mensagem inicial e texto do botão em `brand.whatsapp`.
+- Instagram: URL, arroba e texto do botão em `brand.instagram`.
+- Textos institucionais e informações da marca: nome, tagline, e-mail, localização, navegação, produtos, materiais e itens da galeria.
+
+Outros pontos de personalização:
+
+- Textos e seções da página: `src/App.jsx`.
+- Componentes reutilizáveis: `src/components/`.
+- Estilos visuais, cores, espaçamentos e responsividade: `src/styles/global.css`.
+- Imagens e demais arquivos estáticos da marca: `src/assets/`.
+
+## Observação comercial
+
+Este site é uma vitrine institucional para iniciar conversas e captar encomendas personalizadas. Ele não é um e-commerce, não possui carrinho de compras, não processa pagamentos e não exibe preços.
